@@ -9,10 +9,16 @@ class ContactListView(generics.ListAPIView):
     pass
 
 class ContactCreateView(generics.CreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
     pass
 
-class ContactUpdateView(generics.UpdateAPIView):
+class ContactUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
     pass
 
-class ContactDeleteView(generics.DestroyAPIView):
+class ContactDeleteView(generics.RetrieveDestroyAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
     pass
