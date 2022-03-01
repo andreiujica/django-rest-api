@@ -6,19 +6,15 @@ from .serializers import ContactSerializer
 class ContactListView(generics.ListAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    pass
 
-class ContactCreateView(generics.CreateAPIView):
+class ContactCreateView(generics.ListCreateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    pass
 
 class ContactUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    pass
 
 class ContactDeleteView(generics.RetrieveDestroyAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
-    pass
