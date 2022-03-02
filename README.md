@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a simple HTTP REST API meant to replicate a contact book. You are able to list all your contacts, add new contacts, update and delete them. It has been built using the `Django Rest Framework`. Future plans include builting a React/Angular front-end that consumes the API.
+This is a simple HTTP REST API meant to replicate a contact book. You are able to list all your contacts, add new contacts, update and delete them. It has been built using the `Django Rest Framework`. Future plans include building a React/Angular front-end that consumes the API.
 
 Here's how the testing has been done:
 * Postman has been used for checking simple HTTP requests
