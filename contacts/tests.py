@@ -3,9 +3,9 @@ from contacts.models import Contact
 
 # Create your tests here.
 class Test_Contact_Model(TestCase):
+    '''Testing for the Contact model and string representation'''
 
-    @classmethod
-    def setUpTestData(cls) -> None:
+    def setUp(self):
         Contact.objects.create(name = 'Johnny Test', email = 'johnny@gmail.com', phone = '0734221453')
         
     def test_str(self):
