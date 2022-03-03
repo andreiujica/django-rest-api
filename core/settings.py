@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'contacts',
-    'contacts_api',
     'rest_framework',
 ]
 

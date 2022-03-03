@@ -7,4 +7,4 @@ class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         '''Automatically generates fields based on the model'''
         model = Contact
-        fields = ('id', 'name', 'email', 'phone')
+        fields = ['id', 'name', 'email', 'phone']
