@@ -104,7 +104,7 @@ _Below are the next steps on installing and setting up your app. You need to sta
    python manage.py migrate
    ```
 
-3. Access the app at [https://localhost:8000](https://localhost:8000)
+3. Access the app at [http://localhost:8000](https://localhost:8000)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
