@@ -115,8 +115,8 @@ _Below are the next steps on installing and setting up your app. You need to sta
 
 The app is pretty straight-forward, being a CRUD REST API, it is able to Create, Read, Update, Delete contacts. On the main page you are able to list and create new contacts. When going to a specific id, you are able to update and delete that contact.
 
-1. List all contacts and create new ones at [https://localhost:8000/contacts/](https://localhost:8000/contacts/)
-2. Edit and update the contact with id = 1 at [https://localhost:8000/contacts/1/](https://localhost:8000/contacts/1/)
+1. List all contacts and create new ones at [http://localhost:8000/contacts/](http://localhost:8000/contacts/)
+2. Edit and update the contact with id = 1 at [http://localhost:8000/contacts/1/](http://localhost:8000/contacts/1/)
 
 In the future, I plan on implementing an easy-to-use front-end for the API.
 <p align="right">(<a href="#top">back to top</a>)</p>
