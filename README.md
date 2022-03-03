@@ -39,7 +39,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a simple HTTP REST API meant to replicate a contact book. You are able to list all your contacts, add new contacts, update and delete them. It has been built using the `Django Rest Framework`. Future plans include building a React/Angular front-end that consumes the API.
+This is a simple HTTP REST API meant to replicate a contact book. You are able to list all your contacts, add new contacts, update and delete them. It has been built using the `Django Rest Framework`. Future plans include building a front-end that consumes the API.
 
 Here's how the testing has been done:
 * Postman has been used for checking simple HTTP requests
@@ -97,7 +97,14 @@ _Below are the next steps on installing and setting up your app. You need to sta
    ```sh
    python manage.py runserver
    ```
-2. Access the app at [https://localhost:8000](https://localhost:8000)
+
+2. Initialize database
+   ```sh
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
+
+3. Access the app at [https://localhost:8000](https://localhost:8000)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -106,12 +113,10 @@ _Below are the next steps on installing and setting up your app. You need to sta
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The app is pretty straight-forward, being a CRUD REST API, it is able to Create, Read, Update, Delete contacts. The following links take you to the respective endpoints of the API:
+The app is pretty straight-forward, being a CRUD REST API, it is able to Create, Read, Update, Delete contacts. On the main page you are able to list and create new contacts. When going to a specific id, you are able to update and delete that contact.
 
-1. List all contacts at [https://localhost:8000/api/contacts](https://localhost:8000/api/contacts/)
-2. Edit the contact with id = 1 at [https://localhost:8000/api/contacts/1/update/](https://localhost:8000/api/contacts/1/update/)
-3. Create a new contact at [https://localhost:8000/api/contacts/create/](https://localhost:8000/api/contacts/create/)
-4. Delete the contact with id=3 at [https://localhost:8000/api/contacts/3/delete/](https://localhost:8000/api/contacts/3/delete/)
+1. List all contacts and create new ones at [https://localhost:8000/contacts/](https://localhost:8000/contacts/)
+2. Edit and update the contact with id = 1 at [https://localhost:8000/contacts/1/](https://localhost:8000/contacts/1/)
 
 In the future, I plan on implementing an easy-to-use front-end for the API.
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -124,7 +129,7 @@ In the future, I plan on implementing an easy-to-use front-end for the API.
 - [x] Create Django REST API
 - [x] Make use of SQLite database
 - [x] Perform Unit Tests
-- [ ] Add React front-end
+- [ ] Add Vue front-end
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
