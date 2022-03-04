@@ -17,7 +17,7 @@
     <input type="text" v-model="phone" class="form-control mt-2" placeholder="Phone">
   </div>
   <div class="col">
-    <button @click="updateOne(id)" class="btn btn-block btn-success mt-2" >Save</button>
+    <button @click="updateOne(this.id)" class="btn btn-block btn-success mt-2" >Save</button>
   </div>
   </div>
 </div>
@@ -93,7 +93,7 @@ export default {
       this.phone = contact.phone;
     },
     deleteOne(id){
-      axios.delete(`http://localhost:8000/contacts/${id}`)
+      axios.delete(`http://localhost:8000/contacts/${id}/`)
       .then(()=>{
         this.getAll();
       })
@@ -106,7 +106,7 @@ export default {
         this.getAll();
       })
       }else{
-        axios.put(`http://localhost:8000/contacts/${id}`,
+        axios.put(`http://localhost:8000/contacts/${id}/`,
         {name:this.name, email:this.email, phone:this.phone})
         .then(()=>{
         this.getAll();
