@@ -1,12 +1,32 @@
 <template>
-  <div class="row">
-  <div class="col-lg-6">
-    <input type="text" v-model="name" class="form-control mt-2" placeholder="Name">
-    <input type="text" v-model="email" class="form-control mt-2" placeholder="Email">
-    <input type="text" v-model="phone" class="form-control mt-2" placeholder="Phone">
-    <button @click="postOne" class="btn btn-block btn-success">Update</button>
+  <h3>Contacts</h3>
+  <div class="card">
+  <div class="card-header">
+    Add a new contact
   </div>
-  <div class="col-lg-6">
+  <div class="card-body">
+  <div class="row">
+    <div class="col">
+    <input type="hidden" v-model="id" class form-control mt-2 placeholder="Id">
+    <input type="text" v-model="name" class="form-control mt-2" placeholder="Name">
+  </div>
+  <div class="col">
+    <input type="text" v-model="email" class="form-control mt-2" placeholder="Email">
+  </div>
+  <div class="col">
+    <input type="text" v-model="phone" class="form-control mt-2" placeholder="Phone">
+  </div>
+  <div class="col">
+    <button @click="updateOne(id)" class="btn btn-block btn-success mt-2" >Save</button>
+  </div>
+  </div>
+</div>
+  <div class="card">
+  <div class="card-header">
+    Contact List
+  </div>
+  <div class="card-body">
+  <div class="row">
     <table class="table">
       <thead>
         <th>Id</th>
@@ -23,14 +43,16 @@
           <td>{{contact.email}}</td>
           <td>{{contact.phone}}</td>
           <td>
-            <button @click="getOne(contact)" class="btn bn-sm btn-success"><i class="fa-solid fa-pencil"></i></button>
+            <button @click="getOne(contact)" class="btn bn-sm btn-success"><i class="fa-solid fa-pen-to-square"></i></button>
           </td>
           <td>
-            <button @click="deleteOne(contact.id)" class="btn bn-sm btn-success"><i class="fa-solid fa-trash"></i></button>
+            <button @click="deleteOne(contact.id)" class="btn bn-sm btn-success"><i class="fa-solid fa-trash-can"></i></button>
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+  </div>
   </div>
   </div>
 </template>
@@ -58,6 +80,10 @@ export default {
       axios.get('http://localhost:8000/contacts/')
       .then((res)=>{
         this.contacts=res.data
+        this.id = ''
+        this.name=''
+        this.email=''
+        this.phone=''
       })
     },
     getOne(contact){
@@ -68,10 +94,25 @@ export default {
     },
     deleteOne(id){
       axios.delete(`http://localhost:8000/contacts/${id}`)
+      .then(()=>{
+        this.getAll();
+      })
     },
-    updateOne(){
-      axios.post('http://localhost:8000/contacts/'),
-      {name:this.name, email:this.email, phone:this.phone}
+    updateOne(id){
+      if(id == ''){
+        axios.post('http://localhost:8000/contacts/',
+        {name:this.name, email:this.email, phone:this.phone})
+        .then(()=>{
+        this.getAll();
+      })
+      }else{
+        axios.put(`http://localhost:8000/contacts/${id}`,
+        {name:this.name, email:this.email, phone:this.phone})
+        .then(()=>{
+        this.getAll();
+      })
+      
+      }
     }
   }
 }
