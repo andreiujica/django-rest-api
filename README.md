@@ -94,6 +94,10 @@ You should have Node.js installed on your machine. You can get it for free from 
   ```sh
   pip install -r requirements.txt
   ```
+* Install Node Package Manager
+  ```sh
+  sudo apt install npm
+  ```
  
 * Install Vue.js using Node Package Manager
   ```sh
@@ -104,17 +108,23 @@ You should have Node.js installed on your machine. You can get it for free from 
 
 _Below are the next steps on installing and setting up your app. You need to start the Django server and access the URL of the app._
 
-1. Start the Django server
-   ```sh
-   python manage.py runserver
-   ```
-
-2. Initialize database
+1. Initialize database
    ```sh
    python manage.py makemigrations
    python manage.py migrate
    ```
-3. Run the Vue.js server
+
+2. Start the Django server
+   ```sh
+   python manage.py runserver
+   ```
+
+3. Install all dependencies
+   ```sh
+   npm install
+   ``` 
+
+4. Run the Vue.js server
     ```sh
    npm run serve
    ```
