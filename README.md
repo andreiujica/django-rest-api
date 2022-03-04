@@ -39,7 +39,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is a simple HTTP REST API meant to replicate a contact book. You are able to list all your contacts, add new contacts, update and delete them. It has been built using the `Django Rest Framework`. Future plans include building a front-end that consumes the API.
+This is a simple HTTP REST API meant to replicate a contact book. You are able to list all your contacts, add new contacts, update and delete them. It has been built using the `Django Rest Framework` for the server-side and Vue.js for client-side.
+
+![rest api](https://user-images.githubusercontent.com/46849514/156685347-1214b598-c5a2-41f8-8a49-b09eac3e9e44.png)
 
 Here's how the testing has been done:
 * Postman has been used for checking simple HTTP requests
@@ -59,6 +61,8 @@ Read the `Getting started` section to learn more.
 * [Django]
 * [Django Rest Framework]
 * [Coverage]
+* [Vue.js]
+* [Axios]
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -72,7 +76,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-There are a couple of things needed before you can run the Django server.
+There are a couple of things needed before you can run the application. 
+You should have Node.js installed on your machine. You can get it for free from https://nodejs.org/en/
+
 * Create a virtual environment
   ```sh
   pip install virtualenv
@@ -87,6 +93,11 @@ There are a couple of things needed before you can run the Django server.
 * Install required dependencies
   ```sh
   pip install -r requirements.txt
+  ```
+ 
+* Install Vue.js using Node Package Manager
+  ```sh
+  npm install -g @vue/cli
   ```
 
 ### Installation
@@ -103,8 +114,10 @@ _Below are the next steps on installing and setting up your app. You need to sta
    python manage.py makemigrations
    python manage.py migrate
    ```
-
-3. Access the app at [http://localhost:8000](https://localhost:8000)
+3. Run the Vue.js server
+    ```sh
+   npm run serve
+   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -115,10 +128,9 @@ _Below are the next steps on installing and setting up your app. You need to sta
 
 The app is pretty straight-forward, being a CRUD REST API, it is able to Create, Read, Update, Delete contacts. On the main page you are able to list and create new contacts. When going to a specific id, you are able to update and delete that contact.
 
-1. List all contacts and create new ones at [http://localhost:8000/contacts/](http://localhost:8000/contacts/)
-2. Edit and update the contact with id = 1 at [http://localhost:8000/contacts/1/](http://localhost:8000/contacts/1/)
-
-In the future, I plan on implementing an easy-to-use front-end for the API.
+0. Frontend interface at [http://localhost:8080/](http://localhost:8080/)
+1. List all contacts and create new ones from api interface at [http://localhost:8000/contacts/](http://localhost:8000/contacts/)
+2. Edit and update the contact with id = 1 from api interface at [http://localhost:8000/contacts/1/](http://localhost:8000/contacts/1/)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -129,7 +141,7 @@ In the future, I plan on implementing an easy-to-use front-end for the API.
 - [x] Create Django REST API
 - [x] Make use of SQLite database
 - [x] Perform Unit Tests
-- [ ] Add Vue front-end
+- [x] Add Vue front-end
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
